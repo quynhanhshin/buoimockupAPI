@@ -5,9 +5,13 @@ export default function ApiProduct() {
         const [list, setList] = useState([]);
         let url = "https://658c2957859b3491d3f59c3a.mockapi.io/Product";
         useEffect(() => {
-                axios.get(url).then(function (res) {
+                axios
+                .get(url).then(function (res) {
                         console.log(res.data);
                         setList(res.data);
+                });
+                .catch(function(error){
+                    console.log(error)
                 });
         }, []);
         return (
